@@ -1,25 +1,14 @@
-'use strict';
+// create the module and name it scotchApp    
+var dorm = angular.module('dormApp', ['ngRoute']);  
 
-var dormApp angular.module('dormApp', ['ngRoute', 'mgcrea.ngStrap.navbar']);
+dorm.config(['$locationProvider', function($locationProvider) {
+  $locationProvider.hashPrefix('');
+}]);  
 
-dormApp.config(function($routeProvider) {
-		.when('/blog', {
-			templateUrl: 'views/register.html',
-			controller: 'RegisterController'
-		})
-		.when('/blog', {
-			templateUrl: 'views/login.html',
-			controller: 'LoginController'
-		})
-		.when('/blog', {
-			templateUrl: 'views/blog.html',
-			controller: 'BlogController'
-		})
-		.when('/chat', {
-			templateUrl: 'views/chat.html',
-			controller: 'ChatController'
-		})
-		.otherwise({
-			redirectTo: '/'
-		});
-});
+// configure our routes    
+dorm.config(['$routeProvider', function($routeProvider){
+	$routeProvider.when('/login', {
+		templateUrl: 'views/login.html'
+	})
+}]);
+
