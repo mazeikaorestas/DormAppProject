@@ -30,6 +30,9 @@ dorm.config(['$routeProvider', function($routeProvider){
         .when('/dashboard', {
             templateUrl: 'views/dashboard.html'
         })
+        .when('/blog', {
+            templateUrl: 'views/blog.html'
+        })
 }]);
 
 
